@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const connectDB = require('./db/connectDB');
 const cookieParser = require('cookie-parser');
 const userRoutes = require('./routes/userRoutes');
+const postRoutes = require('./routes/postRoutes');
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(cookieParser());
 //Routes
 
 app.use("/api/users", userRoutes);
+app.use("/api/posts", postRoutes);
 
 app.listen(PORT, () => {
   console.log('Listening on port 3000');
